@@ -1,0 +1,23 @@
+.outerDiv{
+    display: block;
+    width: 100%;
+    height : 100%;
+}
+
+.innerDiv{
+    margin-bottom: 30px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.mainButton{
+    border: none;
+    background-color: #888888;
+    padding: 10px;
+    font-size: 20px;
+}
