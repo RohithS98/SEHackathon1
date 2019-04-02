@@ -18,8 +18,7 @@
         height: innerHeight,
         scene: {
             preload: preload,
-            create: create,
-            update: update
+            create: create
         }
     };
 
@@ -45,17 +44,20 @@
         var wave1 = this.add.image(0,innerHeight+40,'wave');
         car1.scaleY = 0.25;
         car1.scaleX = -0.25;
-        this.tweens.add({
+        var waveTween = this.tweens.add({
             targets : [wave, wave1],
             props: {
-                scaleX: {value : 100, duration: 100000, ease: 'linear'}
+                scaleX: {value : 100, duration: 2000, ease: 'linear'}
             }
         });
+        
+        setTimeout(() => {
+            console.log("Hello")
+        }, 2000);
     }
 
-    function update(){
 
-    }
+    
 
     </script>
 
