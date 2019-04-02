@@ -28,8 +28,8 @@
     function preload ()
     {
         console.log(game);
-        this.load.image('car', '../assets/testCar1.png');
-        this.load.image('bg', '../assets/city.jpg');
+        this.load.image('car', '../assets/testCar2.jpeg');
+        this.load.image('bg', '../assets/city2.jpeg');
         this.load.image('wave', '../assets/wave1.png')
     }
 
@@ -41,10 +41,10 @@
         bg.setDisplaySize(innerWidth, innerHeight);
         var wave = this.add.image(0,innerHeight-40,'wave');
         wave.scaleY = 1.5;
-        var car1 = this.add.image(innerWidth/2,innerHeight-70, 'car');
+        var car1 = this.add.image(innerWidth/2+150,innerHeight-100, 'car');
         var wave1 = this.add.image(0,innerHeight+40,'wave');
-        car1.scaleY = 0.25;
-        car1.scaleX = -0.25;
+        car1.scaleY = 2;
+        car1.scaleX = 2;
         this.tweens.add({
             targets : [wave, wave1],
             props: {
