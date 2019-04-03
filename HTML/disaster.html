@@ -1,27 +1,92 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="../CSS/main.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/disaster.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body class="nomarg">
 
   <div class="outerDiv">
 
-    <div class="innerDiv">
-        <h1>Disaster Simulator</h2>
+    <button class="back" onClick="back()">Back</button>
+    <div class="header">
+        <h1>Predicted Disasters</h2>
     </div>
 
-    <div class="innerDiv">
-      <button class = "mainButton" onClick="simSelect()">Start Simulation</button>
+    <div class="filterBar">
+        <form class="centerForm">
+            <div class="text1">
+                <p>Disaster Type:</p>
+            </div>
+
+            <select name="disType" class="filterBox" id="dtype">
+                <option value="all">All</option>
+                <option value="eq">Earthquakes</option>
+                <option value="fld">Floods</option>
+                <option value="cyc">Cyclones</option>
+                <option value="hw">Heat Waves</option>
+            </select>
+            <input type="button" value="Submit" class="searchButton">
+        </form>
     </div>
-    
-    <div class="innerDiv">
-      <button class = "mainButton" onClick="textBook()">Text Guide</button>
+
+    <div class="mapPart">
+			<div class="table-responsive">
+                    <span id="result"></span>
+                    <div id="live_data"></div>
+                </div>
     </div>
-  
+
   </div>
 
-  <script src="../JS/main.js"></script>
+
+  <script>
+      $(document).ready(function(){
+          var dtype = 'any';
+          var obj = {
+            'Earthquakes': 'earthquake',
+            'Floods': 'flood',
+            'Cyclones': 'cyclone',
+            'Heat Waves': 'heatwave',
+            'All': 'any'
+        };
+        function fetch_data()
+        {
+            $.ajax({
+                url:"../PHP/getDisasters.php",
+                method:"POST",
+                data: {type : dtype},
+                success:function(data){
+                    $('#live_data').html(data);
+                }
+            });
+        }
+        fetch_data();
+        $(document).on('click', '.searchButton', function(){
+            dtype = $('#dtype').find(":selected").text();;
+            console.log(dtype);
+            $.ajax({
+                url:"../PHP/getDisasters.php",
+                method:"POST",
+                data:{type :obj[dtype]},
+                dataType:"text",
+                success:function(data){
+                    $('#live_data').html(data);
+                }
+        });
+    });
+})
+
+function back(){
+    window.location.replace("./main.html");
+}
+
+  </script>
 
 </body>
 </html>
