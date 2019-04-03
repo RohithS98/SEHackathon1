@@ -1,23 +1,124 @@
-.outerDiv{
-    display: block;
-    width: 100%;
-    height : 100%;
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
+.container {
+  background-color: #232323;
+  display: all;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.container svg {
+  max-width: 45rem;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: white;
+  stroke-width: 5;
+  justify-content: center;
+  margin-top: 10%;
+  margin-left: 33%;
+  margin-bottom: 10%;
+}
+.container svg tspan > tspan {
+  stroke-dasharray: 1500;
+  stroke-dashoffset: -1500;
+}
+.container svg tspan > tspan:nth-of-type(1) {
+  -webkit-animation: draw 300ms 150ms forwards;
+          animation: draw 300ms 150ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(2) {
+  -webkit-animation: draw 300ms 300ms forwards;
+          animation: draw 300ms 300ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(3) {
+  -webkit-animation: draw 300ms 450ms forwards;
+          animation: draw 300ms 450ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(4) {
+  -webkit-animation: draw 300ms 600ms forwards;
+          animation: draw 300ms 600ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(5) {
+  -webkit-animation: draw 300ms 750ms forwards;
+          animation: draw 300ms 750ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(6) {
+  -webkit-animation: draw 300ms 900ms forwards;
+          animation: draw 300ms 900ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(7) {
+  -webkit-animation: draw 300ms 1050ms forwards;
+          animation: draw 300ms 1050ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(8) {
+  -webkit-animation: draw 300ms 1200ms forwards;
+          animation: draw 300ms 1200ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(9) {
+  -webkit-animation: draw 300ms 1350ms forwards;
+          animation: draw 300ms 1350ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(10) {
+  -webkit-animation: draw 300ms 1500ms forwards;
+          animation: draw 300ms 1500ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(11) {
+  -webkit-animation: draw 300ms 1650ms forwards;
+          animation: draw 300ms 1650ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(12) {
+  -webkit-animation: draw 300ms 1800ms forwards;
+          animation: draw 300ms 1800ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(13) {
+  -webkit-animation: draw 300ms 1950ms forwards;
+          animation: draw 300ms 1950ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(14) {
+  -webkit-animation: draw 300ms 2100ms forwards;
+          animation: draw 300ms 2100ms forwards;
+}
+.container svg tspan > tspan:nth-of-type(15) {
+  -webkit-animation: draw 300ms 2250ms forwards;
+          animation: draw 300ms 2250ms forwards;
 }
 
-.innerDiv{
-    margin-bottom: 30px;
+@-webkit-keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.innerdiv {
+	margin-bottom: 30px;
     margin-top: 30px;
     display: flex;
     justify-content: center;
 }
 
-h1 {
-    font-size: 80px;
+.btn {
+  border: 2px solid black;
+  background-color: #232323;
+  color: black;
+  padding: 14px 28px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-.mainButton{
-    border: none;
-    background-color: #888888;
-    padding: 10px;
-    font-size: 20px;
+.red {
+  border-color: #f44336;
+  color: red
+
+}
+
+.red:hover {
+  background: #f44336;
+  color: #232323;
 }
